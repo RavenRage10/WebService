@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Albums</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="busqueda" (ionChange)="cambio()"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of (results | async)" >
+      <ion-label text-wrap>
+        <h3>{{ item.id }} : {{ item.title }}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
